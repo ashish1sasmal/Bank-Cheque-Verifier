@@ -12,8 +12,9 @@ import sys
 from image_align import alignImages
 import pytesseract
 
-img = cv2.imread(sys.argv[1], cv2.IMREAD_COLOR)
-temp = cv2.imread(sys.argv[2], cv2.IMREAD_COLOR)
+# img = cv2.imread("Test/"+sys.argv[1], cv2.IMREAD_COLOR)
+temp = cv2.imread("Test/"+sys.argv[2], cv2.IMREAD_COLOR)
+temp = imutils.resize(temp, width=700)
 
 locs = {"accno":None,
             "amt":None,
@@ -44,13 +45,13 @@ locs["name"] = ROIS[2]
 locs["date"] = ROIS[3]
 
 print("Aligning images ...")
-aligned,h = alignImages(img, temp)
+# aligned,H = alignImages(img, temp)
 #
 
 
 for i in locs:
     (x, y, w, h) = (locs[i][0], locs[i][1], locs[i][2] , locs[i][3])
-    roi = aligned[y:y+h, x:x+w]
+    roi = temp[y:y+h, x:x+w]
     rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
     text = pytesseract.image_to_string(rgb)
     print(f"[{i}: {text} ]")
