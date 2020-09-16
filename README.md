@@ -1,6 +1,6 @@
 # Bank-Cheque-Verifier
 
-### A very simple bank cheque verifier using custom configuration for cheques of different banks.
+### A very useful bank cheque verifier using custom configuration for cheques of different banks.
 
 #### How to use this ?
 1. Select ROI (Region Of Interest) over the cheque fields which you want to check.
