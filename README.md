@@ -10,5 +10,5 @@
 4. Extract the ROIs from aligned image.
 5. Perform OCR to recognize the text inside the ROIs.
 6. Apply custom checks defined by client.
-7. Done
+7. Done<br>
     ![alt text](https://github.com/ashish1sasmal/Bank-Cheque-Verifier/blob/master/Cheque_Verifier/Outputs/output2.png)  
